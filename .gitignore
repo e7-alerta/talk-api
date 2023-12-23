@@ -1,5 +1,7 @@
 /bin/
 /lib/
 /.idea/
+/share/
+/etc/
 
 __pycache__/
