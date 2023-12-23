@@ -5,7 +5,7 @@ from dash.types import DashContact, DashPlaceInfo
 
 ACCOUNT_SID = "ACfd290673ba69ccb1748912b28521ab8d"
 
-AUTH_TOKEN = "121258cc90b64dfb11945b636720b5d5"
+AUTH_TOKEN = "cb0f9f4b36e2e577b8f88a5ae9cf51e5"
 
 account_sid = ACCOUNT_SID  # os.environ['TWILIO_ACCOUNT_SID']
 auth_token = AUTH_TOKEN  # os.environ['TWILIO_AUTH_TOKEN']
