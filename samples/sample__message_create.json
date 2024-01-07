@@ -1,0 +1,14 @@
+{
+  "content_type": "text",
+  "content": "👋🤗 Buenas noches, Alerta PBA  🚨️🚨056c",
+  "conversation": {
+    "meta": {
+      "sender": {
+        "phone_number": "+5491128835917",
+        "type": "contact"
+      }
+    }
+  },
+  "message_type": "outgoing",
+  "event": "message_created"
+}

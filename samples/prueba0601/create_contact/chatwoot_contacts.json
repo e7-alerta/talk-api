@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "count": 1,
+    "current_page": "1"
+  },
+  "payload": [
+    {
+      "additional_attributes": {},
+      "availability_status": "offline",
+      "email": null,
+      "id": 36,
+      "name": "Ernesto",
+      "phone_number": "+5491136206603",
+      "identifier": "5491136206603@s.whatsapp.net",
+      "thumbnail": "",
+      "custom_attributes": {},
+      "last_activity_at": 1704617503,
+      "created_at": 1704617502
+    }
+  ]
+}

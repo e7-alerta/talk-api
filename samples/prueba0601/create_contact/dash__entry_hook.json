@@ -1,0 +1,10 @@
+{
+  "event": "contacts.items.create",
+  "payload": {
+    "phone": "+5491136206603",
+    "name": "Ernesto simionato",
+    "address": "Av Independencia 2581"
+  },
+  "key": "397710f2-f4ca-4814-89b8-09495ded7de8",
+  "collection": "contacts"
+}

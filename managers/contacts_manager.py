@@ -32,32 +32,59 @@ def register_contact(form: CreateContactForm):
             phone_number=form.phone
         ))
         print("[ chat contact created ] ", chat_contact)
-        pass
 
-    # create a conversation for the contact if it doesn't exist
-    chat_contact = chat_conversations_service.create_conversation(chat_contact)
+        # create a conversation for the contact if it doesn't exist
+        chat_contact = chat_conversations_service.create_conversation(chat_contact)
+        pass
+    else:
+        print("[ chat contact already exists ] ", chat_contact)
+
+        # find conversation by contact
+        conversations = chat_contacts_service.get_contact_conversations(chat_contact.id)
+        print("[ conversations ] ", conversations)
+        if len(conversations) == 0:
+            print("[ conversation doesn't exist ] ")
+            conversation = chat_conversations_service.create_conversation(chat_contact)
+            print("[ conversation created #1 ] ", conversation)
+            chat_contact.last_conversation_id = conversation.id
+            pass
+        else:
+            conversations_open = [conv for conv in conversations if conv["status"] == "open"]
+            if len(conversations_open) == 0:
+                print("[ open conversation doesn't exist ] ")
+                conversation = chat_conversations_service.create_conversation(chat_contact)
+                print("[ conversation created #2 ] ", conversation)
+                chat_contact.last_conversation_id = conversation.id
+                pass
+            else:
+                conversation = max(conversations_open, key=lambda x: x["last_activity_at"])
+                # ultima convirsacion abierta
+                print("[ last open conversation ] ", conversation)
+                chat_contact.last_conversation_id = conversation["id"]
+                pass
+            pass
 
     # luego de obtener el contacto, o crearlo debemos actualizar el chatwoot_id
     dash_contacts_service.update_chatwoot_id(contact_id=form.dash_id, chatwoot_id=chat_contact.id,
                                              last_conversation_id=chat_contact.last_conversation_id)
 
-    if form.place_id is None:
-        # el contacto no tiene un lugar asignado, asignarle el lugar
-        print("[ the contact doesn't have a place assigned ] ", chat_contact)
-        return
+    # if form.place_id is None:
+    #     # el contacto no tiene un lugar asignado, asignarle el lugar
+    #     print("[ the contact doesn't have a place assigned ] ", chat_contact)
+    #     return
 
-    # enviar mensaje de bienvenida
-    place = dash_places_service.get_place(form.place_id)
-    if new_contact:
-        send_welcome_message(chat_contact, place)
-    else:
-        send_welcome_back_message(chat_contact, place)
+    # # enviar mensaje de bienvenida
+    # place = dash_places_service.get_place(form.place_id)
+    # if new_contact:
+    #     send_welcome_message(chat_contact, place)
+    # else:
+    #     send_welcome_back_message(chat_contact, place)
 
-    # enviemos un mensaje recordando que puede agregar nuevos contactos de confianza a su tienda.
-    if form.contact_type == "owner":
-        # sleep 5 seconds
-        sleep(5)
-        send_add_contact_message(chat_contact, place)
+    # # enviemos un mensaje recordando que puede agregar nuevos contactos de confianza a su tienda.
+    # if form.contact_type == "owner":
+    #     # sleep 5 seconds
+    #     sleep(5)
+    #     send_add_contact_message(chat_contact, place)
 
 
 def send_welcome_message(chat_contact: ChatContact, place: DashPlaceInfo):

@@ -1,11 +1,12 @@
-from typing import Optional
-
 from fastapi import FastAPI
-from pydantic import BaseModel
 
+from features.greeting.parser import EventPayload
+from handlers import place_greeting_message_handler
 from managers.types import CreateContactForm, SendPanicAlertForm
 from managers import contacts_manager
 from services.speak import speaker_service
+
+from features.greeting import event_handler, EventHandler
 
 app = FastAPI()
 
@@ -37,9 +38,37 @@ async def talk_panic_alert(bodyForm: dict):
     }
 
 
+@app.post("/talk/v1/hooks/chatwoot/channel")
+async def talk_chatwoot_channel(bodyForm: dict):
+    print("[ talk_chatwoot_channel ] ", bodyForm)
+
+    event: EventPayload = event_handler.handle_event(bodyForm)
+    print("Event:", event)
+    # si es un mensaje creado
+    if event.is_message_created():
+        # si es un mensaje de contacto
+        if event.message_created_form.is_vecino_greeting():
+            print("Es un mensaje de saludo desde vecinos app")
+            # contacts_manager.register_contact(event.message_created_form)
+        elif event.message_created_form.is_place_greeting():
+            print("Es un mensaje de saludo desde place app por " + event.message_created_form.sender_name + " desde " + event.message_created_form.phone_number)
+            place_greeting_message_handler.handle(event.message_created_form)
+            # contacts_manager.register_contact(event.message_created_form)
+
+    return {
+        "status": "success",
+        "message": "mensaje enviado"
+    }
+
+
 @app.post("/talk/v1/hooks/contacts/create")
 async def talk_contacts_create(bodyForm: dict):
     print("[ talk_contacts_create ] ", bodyForm)
+
+    keep_current_conversation = False
+    if "keep_current_conversation" in bodyForm:
+        keep_current_conversation = bodyForm["keep_current_conversation"]
+
 
     chatwoot_id = None
     # check if payload has chatwoot_id
@@ -62,7 +91,8 @@ async def talk_contacts_create(bodyForm: dict):
         name=bodyForm["payload"]["name"],
         contact_type=contact_type,
         place_id=place_id,
-        chatwoot_id=chatwoot_id
+        chatwoot_id=chatwoot_id,
+        keep_current_conversation=keep_current_conversation
     )
 
     contacts_manager.register_contact(form)
@@ -71,6 +101,15 @@ async def talk_contacts_create(bodyForm: dict):
         "status": "success",
         "message": "contacto creado",
         "data": form
+    }
+
+
+@app.post("/talk/v1/hooks/botpress/hooks/onboarding_place/before_outgoing_hook")
+async def botpress_hook_onboarding_place__before_outgoing(bodyForm: dict):
+    print("[ botpress_hook_onboarding_place__before_outgoing ] ", bodyForm)
+
+    return {
+        "status": "success"
     }
 
 

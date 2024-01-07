@@ -1,0 +1,126 @@
+{
+	"payload": [
+		{
+			"meta": {
+				"sender": {
+					"additional_attributes": {},
+					"availability_status": "offline",
+					"email": null,
+					"id": 36,
+					"name": "Ernesto",
+					"phone_number": "+5491136206603",
+					"identifier": "5491136206603@s.whatsapp.net",
+					"thumbnail": "",
+					"custom_attributes": {},
+					"last_activity_at": 1704617503,
+					"created_at": 1704617502
+				},
+				"channel": "Channel::Api",
+				"hmac_verified": false
+			},
+			"id": 54,
+			"messages": [
+				{
+					"id": 309,
+					"content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 d639",
+					"account_id": 2,
+					"inbox_id": 1,
+					"conversation_id": 54,
+					"message_type": 0,
+					"created_at": 1704617503,
+					"updated_at": "2024-01-07T08:51:43.566Z",
+					"private": false,
+					"status": "sent",
+					"source_id": null,
+					"content_type": "text",
+					"content_attributes": {},
+					"sender_type": "Contact",
+					"sender_id": 36,
+					"external_source_ids": {},
+					"additional_attributes": {},
+					"processed_message_content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 d639",
+					"sentiment": {},
+					"conversation": {
+						"assignee_id": null,
+						"unread_count": 1,
+						"last_activity_at": 1704617503,
+						"contact_inbox": {
+							"source_id": "bd678dab-0c35-4e32-bb15-55cee24e8fb9"
+						}
+					},
+					"sender": {
+						"additional_attributes": {},
+						"custom_attributes": {},
+						"email": null,
+						"id": 36,
+						"identifier": "5491136206603@s.whatsapp.net",
+						"name": "Ernesto",
+						"phone_number": "+5491136206603",
+						"thumbnail": "",
+						"type": "contact"
+					}
+				}
+			],
+			"account_id": 2,
+			"uuid": "60438c6b-82b1-4535-a573-911555dfb1f6",
+			"additional_attributes": {},
+			"agent_last_seen_at": 0,
+			"assignee_last_seen_at": 0,
+			"can_reply": true,
+			"contact_last_seen_at": 0,
+			"custom_attributes": {},
+			"inbox_id": 1,
+			"labels": [],
+			"muted": false,
+			"snoozed_until": null,
+			"status": "open",
+			"created_at": 1704617503,
+			"timestamp": 1704617503,
+			"first_reply_created_at": 0,
+			"unread_count": 1,
+			"last_non_activity_message": {
+				"id": 309,
+				"content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 d639",
+				"account_id": 2,
+				"inbox_id": 1,
+				"conversation_id": 54,
+				"message_type": 0,
+				"created_at": 1704617503,
+				"updated_at": "2024-01-07T08:51:43.566Z",
+				"private": false,
+				"status": "sent",
+				"source_id": null,
+				"content_type": "text",
+				"content_attributes": {},
+				"sender_type": "Contact",
+				"sender_id": 36,
+				"external_source_ids": {},
+				"additional_attributes": {},
+				"processed_message_content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 d639",
+				"sentiment": {},
+				"conversation": {
+					"assignee_id": null,
+					"unread_count": 1,
+					"last_activity_at": 1704617503,
+					"contact_inbox": {
+						"source_id": "bd678dab-0c35-4e32-bb15-55cee24e8fb9"
+					}
+				},
+				"sender": {
+					"additional_attributes": {},
+					"custom_attributes": {},
+					"email": null,
+					"id": 36,
+					"identifier": "5491136206603@s.whatsapp.net",
+					"name": "Ernesto",
+					"phone_number": "+5491136206603",
+					"thumbnail": "",
+					"type": "contact"
+				}
+			},
+			"last_activity_at": 1704617503,
+			"priority": null,
+			"waiting_since": 1704617503
+		}
+	]
+}

@@ -1,4 +1,5 @@
 from chatwoot import contacts_client
+from chatwoot import conversations_client
 
 
 def create_contact(contact):
@@ -11,3 +12,8 @@ def create_contact(contact):
 def get_contact_by_phone(phone):
     print("[ contacts_service::get_contact_by_phone ] ", phone)
     return contacts_client.find_by_phone(phone)
+
+
+def get_contact_conversations(contact_id):
+    print("[ contacts_service::get_contact_conversations ] ", contact_id)
+    return conversations_client.find_by_contact(contact_id)

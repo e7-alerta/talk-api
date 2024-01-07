@@ -121,6 +121,7 @@ class ContactsClient(object):
 
         print(response.json())
         data = response.json()["payload"][0]
+        print(f"chatwoot contacts client | contact finded is {data}")
         # return the first contact with a Contact object
         # change int id to str
 

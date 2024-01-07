@@ -1,0 +1,106 @@
+{
+  "additional_attributes": {},
+  "can_reply": true,
+  "channel": "Channel::Api",
+  "contact_inbox": {
+    "id": 37,
+    "contact_id": 28,
+    "inbox_id": 1,
+    "source_id": "445f5eb0-d2c3-4f89-9110-c2313979f9f3",
+    "created_at": "2023-12-30T02:53:53.579Z",
+    "updated_at": "2023-12-30T02:53:53.579Z",
+    "hmac_verified": false,
+    "pubsub_token": "UFbuedrNzpjVBt7vEGnokhtg"
+  },
+  "id": 46,
+  "inbox_id": 1,
+  "messages": [
+    {
+      "id": 251,
+      "content": "👋🤗 Buenas noches, Alerta PBA  🚨️🚨056c",
+      "account_id": 2,
+      "inbox_id": 1,
+      "conversation_id": 46,
+      "message_type": 1,
+      "created_at": 1703904834,
+      "updated_at": "2023-12-30T02:53:54.033Z",
+      "private": false,
+      "status": "sent",
+      "source_id": null,
+      "content_type": "text",
+      "content_attributes": {},
+      "sender_type": "User",
+      "sender_id": 2,
+      "external_source_ids": {},
+      "additional_attributes": {},
+      "processed_message_content": "👋🤗 Buenas noches, Alerta PBA  🚨️🚨056c",
+      "sentiment": {},
+      "conversation": {
+        "assignee_id": null,
+        "unread_count": 0,
+        "last_activity_at": 1703904834,
+        "contact_inbox": {
+          "source_id": "445f5eb0-d2c3-4f89-9110-c2313979f9f3"
+        }
+      },
+      "sender": {
+        "id": 2,
+        "name": "Gabriel Simionato",
+        "available_name": "Gaby",
+        "avatar_url": "",
+        "type": "user",
+        "availability_status": null,
+        "thumbnail": ""
+      }
+    }
+  ],
+  "labels": [],
+  "meta": {
+    "sender": {
+      "additional_attributes": {},
+      "custom_attributes": {},
+      "email": null,
+      "id": 28,
+      "identifier": "5491128835917@s.whatsapp.net",
+      "name": "5491128835917",
+      "phone_number": "+5491128835917",
+      "thumbnail": "http://chat.vecinos.com.ar/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBY2M9IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ed2eaf13934277f3e7d124b8f5974c3363718d30/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6d67cc85ee1ef5607c0fd1f48989b596f125a667/384662907_650713980193020_2658275846364532393_n.jpg",
+      "type": "contact"
+    },
+    "assignee": null,
+    "team": null,
+    "hmac_verified": false
+  },
+  "status": "open",
+  "custom_attributes": {},
+  "snoozed_until": null,
+  "unread_count": 0,
+  "first_reply_created_at": "2023-12-30T02:53:54.033Z",
+  "priority": null,
+  "waiting_since": 0,
+  "agent_last_seen_at": 0,
+  "contact_last_seen_at": 0,
+  "timestamp": 1703904834,
+  "created_at": 1703904833,
+  "event": "conversation_updated",
+  "changed_attributes": [
+    {
+      "updated_at": {
+        "previous_value": "2023-12-30T02:53:54.042Z",
+        "current_value": "2023-12-30T02:53:54.185Z"
+      }
+    },
+    {
+      "first_reply_created_at": {
+        "previous_value": null,
+        "current_value": "2023-12-30T02:53:54.033Z"
+      }
+    },
+    {
+      "waiting_since": {
+        "previous_value": "2023-12-30T02:53:53.605Z",
+        "current_value": null
+      }
+    }
+  ]
+}

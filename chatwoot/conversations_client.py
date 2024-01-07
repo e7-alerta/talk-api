@@ -10,6 +10,7 @@ class ConversationsClient(object):
         self.inbox_id = params.inbox_id
         # self.source_id = params.source_id
         self.conversations_url = f"{params.base_url}/api/v1/accounts/{params.account_id}/conversations"
+        self.contacts_url = f"{params.base_url}/api/v1/accounts/{params.account_id}/contacts"
 
     def send_message(self, contact: ChatContact, message: str):
         print("ConversationClient.send_message | contact", contact)
@@ -60,3 +61,11 @@ class ConversationsClient(object):
         contact.last_conversation_id = response.json()["id"]
         print("ConversationClient.create | conversation_id", contact.last_conversation_id)
         return contact
+
+    def find_by_contact(self, contact_id):
+        print("ConversationClient.find_by_contact | contact_id", contact_id)
+        #  https://chat.vecinos.com.ar/api/v1/accounts/2/contacts/36/conversations
+        response = self.session.get(f"{self.contacts_url}/{contact_id}/conversations")
+        print("ConversationClient.find_by_contact | response.status_code", response.status_code)
+        print("ConversationClient.find_by_contact | response", response.json())
+        return response.json().get("payload", [])

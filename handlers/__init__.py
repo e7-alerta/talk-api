@@ -1,0 +1,3 @@
+from handlers.place_greeting_handler import PlaceGreetingMessageHandler
+
+place_greeting_message_handler = PlaceGreetingMessageHandler()

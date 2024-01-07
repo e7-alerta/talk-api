@@ -11,6 +11,7 @@ class CreateContactForm(BaseModel):
     contact_type: Optional[str] = None
     place_id: Optional[str] = None
     chatwoot_id: Optional[str] = None
+    keep_current_conversation: Optional[bool] = False
 
 
 class SendPanicAlertForm(BaseModel):

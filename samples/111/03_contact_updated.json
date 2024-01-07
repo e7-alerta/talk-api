@@ -1,0 +1,30 @@
+{
+  "account": {
+    "id": 2,
+    "name": "e7"
+  },
+  "additional_attributes": {},
+  "avatar": "",
+  "custom_attributes": {},
+  "email": null,
+  "id": 34,
+  "identifier": "5491136206603@s.whatsapp.net",
+  "name": "Ernesto",
+  "phone_number": "+5491136206603",
+  "thumbnail": "",
+  "event": "contact_updated",
+  "changed_attributes": [
+    {
+      "updated_at": {
+        "previous_value": "2024-01-07T08:28:19.498Z",
+        "current_value": "2024-01-07T08:28:20.871Z"
+      }
+    },
+    {
+      "last_activity_at": {
+        "previous_value": null,
+        "current_value": "2024-01-07T08:28:20.858Z"
+      }
+    }
+  ]
+}
