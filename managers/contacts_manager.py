@@ -68,23 +68,26 @@ def register_contact(form: CreateContactForm):
     dash_contacts_service.update_chatwoot_id(contact_id=form.dash_id, chatwoot_id=chat_contact.id,
                                              last_conversation_id=chat_contact.last_conversation_id)
 
-    # if form.place_id is None:
-    #     # el contacto no tiene un lugar asignado, asignarle el lugar
-    #     print("[ the contact doesn't have a place assigned ] ", chat_contact)
-    #     return
+    if form.place_id is None:
+        # el contacto no tiene un lugar asignado, asignarle el lugar
+        print("[ the contact doesn't have a place assigned ] ", chat_contact)
+        return
+    else:
+        # enviar mensaje de bienvenida
+        place = dash_places_service.get_place(form.place_id)
+        if new_contact:
+            send_welcome_message(chat_contact, place)
+        else:
+            send_welcome_back_message(chat_contact, place)
 
-    # # enviar mensaje de bienvenida
-    # place = dash_places_service.get_place(form.place_id)
-    # if new_contact:
-    #     send_welcome_message(chat_contact, place)
-    # else:
-    #     send_welcome_back_message(chat_contact, place)
-
-    # # enviemos un mensaje recordando que puede agregar nuevos contactos de confianza a su tienda.
-    # if form.contact_type == "owner":
-    #     # sleep 5 seconds
-    #     sleep(5)
-    #     send_add_contact_message(chat_contact, place)
+        # enviemos un mensaje recordando que puede agregar nuevos contactos de confianza a su tienda.
+        if form.contact_type == "owner":
+            # sleep 5 seconds
+            sleep(5)
+            send_add_contact_message(chat_contact, place)
+            pass
+        pass
+    pass
 
 
 def send_welcome_message(chat_contact: ChatContact, place: DashPlaceInfo):
@@ -96,7 +99,7 @@ def send_welcome_message(chat_contact: ChatContact, place: DashPlaceInfo):
         place_address=place.address
     )
     print("[ conversation_service::send_welcome_message ] message: ", message)
-    chat_conversations_service.send_message(chat_contact, message)
+    chat_conversations_service.send_message(chat_contact.last_conversation_id, message)
     return None
 
 
@@ -109,14 +112,23 @@ def send_welcome_back_message(chat_contact: ChatContact, place: DashPlaceInfo):
         place_address=place.address
     )
     print("[ conversation_service::send_welcome_back_message ] message: ", message)
-    chat_conversations_service.send_message(chat_contact, message)
+    chat_conversations_service.send_message(chat_contact.last_conversation_id, message)
     return None
 
 
 def send_add_contact_message(chat_contact, place):
     print("[ conversation_service::send_add_contact_message ] ", chat_contact, place)
     message = greeting_maker.add_contact_remainder()
-    chat_conversations_service.send_message(chat_contact, message)
+    chat_conversations_service.send_message(chat_contact.last_conversation_id, message)
+    pass
+
+
+def send_message(conversation_id: str, message: str):
+    print("[ conversation_service::send_message ] ", conversation_id, message)
+    chat_conversations_service.send_message(
+        conversation_id=conversation_id,
+        message=message
+    )
     pass
 
 
@@ -128,10 +140,5 @@ def send_panic_alarm(contact: DashContact, place: DashPlaceInfo):
         place_name=place.name,
         place_address=place.address
     )
-    chat_conversations_service.send_message(ChatContact(
-        id=contact.chatwoot_id,
-        name=contact.name,
-        phone_number=contact.phone,
-        last_conversation_id=contact.last_conversation_id
-    ), message)
+    chat_conversations_service.send_message(contact.last_conversation_id, message)
     pass

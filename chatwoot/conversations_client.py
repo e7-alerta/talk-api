@@ -12,15 +12,15 @@ class ConversationsClient(object):
         self.conversations_url = f"{params.base_url}/api/v1/accounts/{params.account_id}/conversations"
         self.contacts_url = f"{params.base_url}/api/v1/accounts/{params.account_id}/contacts"
 
-    def send_message(self, contact: ChatContact, message: str):
-        print("ConversationClient.send_message | contact", contact)
+    def send_message(self, conversation_id: str, message: str):
+        print("ConversationClient.send_message | contact", conversation_id)
         print("ConversationClient.send_message | message", message)
         payload = {
             "content": message,
             "private": False,
         }
         response = self.session.post(
-            f"{self.conversations_url}/{contact.last_conversation_id}/messages",
+            f"{self.conversations_url}/{conversation_id}/messages",
             json=payload
         )
         print("ConversationClient.send_message | response.status_code", response.status_code)

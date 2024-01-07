@@ -45,3 +45,11 @@ class DashContact(BaseModel):
     chatwoot_id: Optional[str] = None
     last_conversation_id: Optional[str] = None
     pass
+
+
+class DashPhoneInfo(BaseModel):
+    id: Optional[str] = None
+    phone_number: Optional[str] = None
+    place: Optional[dict] = None
+    contact: Optional[dict] = None
+    pass

@@ -54,3 +54,6 @@ class MessageCreatedForm(BaseModel):
         index = self.content.find(keyword)
         if index != -1:
             self.phone_key = self.content[index + len(keyword): index + len(keyword) + 4]
+
+    def is_incoming(self):
+        return self.message_type == MessageType.INCOMMING

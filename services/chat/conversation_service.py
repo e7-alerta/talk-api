@@ -12,7 +12,7 @@ def create_conversation(contact: ChatContact):
     return conversation
 
 
-def send_message(contact: ChatContact, message: str):
-    print("[ conversation_service::send_message ] ", contact, message)
-    conversations_client.send_message(contact, message)
+def send_message(conversation_id: str, message: str):
+    print("[ conversation_service::send_message ] ", conversation_id, message)
+    conversations_client.send_message(conversation_id, message)
     pass

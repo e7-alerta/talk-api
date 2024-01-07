@@ -3,6 +3,7 @@ import json
 import requests
 
 from dash.contacts_client import DashContactsClient
+from dash.phones_client import DashPhonesClient
 from dash.places_client import DashPlacesClient
 from dash.types import DashParams
 
@@ -24,6 +25,11 @@ dash_contacts_client = DashContactsClient(
 )
 
 dash_places_client = DashPlacesClient(
+    session,
+    dash_params
+)
+
+dash_phones_client = DashPhonesClient(
     session,
     dash_params
 )

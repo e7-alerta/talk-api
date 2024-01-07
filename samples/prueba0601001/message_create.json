@@ -1,0 +1,111 @@
+{
+  "account": {
+    "id": 2,
+    "name": "e7"
+  },
+  "additional_attributes": {},
+  "content_attributes": {},
+  "content_type": "text",
+  "content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 b79e",
+  "conversation": {
+    "additional_attributes": {},
+    "can_reply": true,
+    "channel": "Channel::Api",
+    "contact_inbox": {
+      "id": 59,
+      "contact_id": 39,
+      "inbox_id": 1,
+      "source_id": "93c70b32-8753-42eb-bdb8-df698b2b3075",
+      "created_at": "2024-01-07T12:32:40.380Z",
+      "updated_at": "2024-01-07T12:32:40.380Z",
+      "hmac_verified": false,
+      "pubsub_token": "yvShUXZabYTt45TL72eCPqFJ"
+    },
+    "id": 57,
+    "inbox_id": 1,
+    "messages": [
+      {
+        "id": 374,
+        "content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 b79e",
+        "account_id": 2,
+        "inbox_id": 1,
+        "conversation_id": 57,
+        "message_type": 1,
+        "created_at": 1704644249,
+        "updated_at": "2024-01-07T16:17:29.063Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "User",
+        "sender_id": 2,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 b79e",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": null,
+          "unread_count": 0,
+          "last_activity_at": 1704644249,
+          "contact_inbox": {
+            "source_id": "93c70b32-8753-42eb-bdb8-df698b2b3075"
+          }
+        },
+        "sender": {
+          "id": 2,
+          "name": "Gabriel Simionato",
+          "available_name": "Gaby",
+          "avatar_url": "",
+          "type": "user",
+          "availability_status": null,
+          "thumbnail": ""
+        }
+      }
+    ],
+    "labels": [],
+    "meta": {
+      "sender": {
+        "additional_attributes": {},
+        "custom_attributes": {},
+        "email": null,
+        "id": 39,
+        "identifier": "5491128835917@s.whatsapp.net",
+        "name": "5491128835917",
+        "phone_number": "+5491128835917",
+        "thumbnail": "http://chat.vecinos.com.ar/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaWNCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--75b09767dfba7faa5bcc6301d46686bf732f9d31/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lKYW5CbFp3WTZCa1ZVT2hOeVpYTnBlbVZmZEc5ZlptbHNiRnNIYVFINk1BPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--5f3375fec9a9cd47682f6a1c0ccf7a892184cef2/file.enc",
+        "type": "contact"
+      },
+      "assignee": null,
+      "team": null,
+      "hmac_verified": false
+    },
+    "status": "open",
+    "custom_attributes": {},
+    "snoozed_until": null,
+    "unread_count": 0,
+    "first_reply_created_at": "2024-01-07T12:32:40.926Z",
+    "priority": null,
+    "waiting_since": 0,
+    "agent_last_seen_at": 1704643566,
+    "contact_last_seen_at": 0,
+    "timestamp": 1704644249,
+    "created_at": 1704630760
+  },
+  "created_at": "2024-01-07T16:17:29.063Z",
+  "id": 374,
+  "inbox": {
+    "id": 1,
+    "name": "ave1"
+  },
+  "message_type": "incoming",
+  "private": false,
+  "sender": {
+    "id": 2,
+    "name": "Gabriel Simionato",
+    "email": "e7canasta@gmail.com",
+    "type": "user"
+  },
+  "source_id": null,
+  "event": "message_created"
+}
