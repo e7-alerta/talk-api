@@ -1,0 +1,15 @@
+const conversation_id = event.conversationId
+const onboarding_bot = 'place_onboarding_bot'
+const step = 'load-user-and-place-info'
+const data = {}
+await axios.post(
+    `https://talk.vecinos.com.ar/talk/v1/hooks/botpress/${onboarding_bot}/conversation/${conversation_id}/step/${step}`,
+    data
+  )
+  .then(function (response) {
+    console.log('.............................. [ hook::then ] ', response.data)
+    // workflow.raw_payload = response.data
+  })
+  .catch(function (error) {
+    console.log(' [ hook::catch ] error -> ', error)
+  })

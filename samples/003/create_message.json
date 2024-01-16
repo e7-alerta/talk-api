@@ -1,0 +1,122 @@
+{
+  "account": {
+    "id": 2,
+    "name": "e7"
+  },
+  "additional_attributes": {},
+  "content_attributes": {},
+  "content_type": "text",
+  "content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 3338",
+  "conversation": {
+    "additional_attributes": {},
+    "can_reply": true,
+    "channel": "Channel::Api",
+    "contact_inbox": {
+      "id": 81,
+      "contact_id": 50,
+      "inbox_id": 1,
+      "source_id": "68a1017b-bf28-492d-8de4-11230b5b24ea",
+      "created_at": "2024-01-08T00:46:33.794Z",
+      "updated_at": "2024-01-08T00:46:33.794Z",
+      "hmac_verified": false,
+      "pubsub_token": "X6t219tk7eRXyQCq536S5Nad"
+    },
+    "id": 68,
+    "inbox_id": 1,
+    "messages": [
+      {
+        "id": 495,
+        "content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 3338",
+        "account_id": 2,
+        "inbox_id": 1,
+        "conversation_id": 68,
+        "message_type": 0,
+        "created_at": 1705381448,
+        "updated_at": "2024-01-16T05:04:08.512Z",
+        "private": false,
+        "status": "sent",
+        "source_id": null,
+        "content_type": "text",
+        "content_attributes": {},
+        "sender_type": "Contact",
+        "sender_id": 50,
+        "external_source_ids": {},
+        "additional_attributes": {},
+        "processed_message_content": "👋🤗 Hola, soy nuevo en Alerta PBA 🚨 3338",
+        "sentiment": {},
+        "conversation": {
+          "assignee_id": null,
+          "unread_count": 10,
+          "last_activity_at": 1705381448,
+          "contact_inbox": {
+            "source_id": "68a1017b-bf28-492d-8de4-11230b5b24ea"
+          }
+        },
+        "sender": {
+          "additional_attributes": {},
+          "custom_attributes": {},
+          "email": null,
+          "id": 50,
+          "identifier": "5491136206603@s.whatsapp.net",
+          "name": "Ernesto",
+          "phone_number": "+5491136206603",
+          "thumbnail": "http://chat.vecinos.com.ar/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbUlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d8457876e84d9b5534db9745f5f8ebf52b15281f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6d67cc85ee1ef5607c0fd1f48989b596f125a667/230885123_340552764270611_3142251917473574000_n.jpg",
+          "type": "contact"
+        }
+      }
+    ],
+    "labels": [],
+    "meta": {
+      "sender": {
+        "additional_attributes": {},
+        "custom_attributes": {},
+        "email": null,
+        "id": 50,
+        "identifier": "5491136206603@s.whatsapp.net",
+        "name": "Ernesto",
+        "phone_number": "+5491136206603",
+        "thumbnail": "http://chat.vecinos.com.ar/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbUlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d8457876e84d9b5534db9745f5f8ebf52b15281f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6d67cc85ee1ef5607c0fd1f48989b596f125a667/230885123_340552764270611_3142251917473574000_n.jpg",
+        "type": "contact"
+      },
+      "assignee": null,
+      "team": null,
+      "hmac_verified": false
+    },
+    "status": "open",
+    "custom_attributes": {},
+    "snoozed_until": null,
+    "unread_count": 10,
+    "first_reply_created_at": "2024-01-08T00:46:46.781Z",
+    "priority": null,
+    "waiting_since": 1705304386,
+    "agent_last_seen_at": 1704734600,
+    "contact_last_seen_at": 0,
+    "timestamp": 1705381448,
+    "created_at": 1704674793
+  },
+  "created_at": "2024-01-16T05:04:08.512Z",
+  "id": 495,
+  "inbox": {
+    "id": 1,
+    "name": "ave1"
+  },
+  "message_type": "incoming",
+  "private": false,
+  "sender": {
+    "account": {
+      "id": 2,
+      "name": "e7"
+    },
+    "additional_attributes": {},
+    "avatar": "http://chat.vecinos.com.ar/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbUlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d8457876e84d9b5534db9745f5f8ebf52b15281f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6d67cc85ee1ef5607c0fd1f48989b596f125a667/230885123_340552764270611_3142251917473574000_n.jpg",
+    "custom_attributes": {},
+    "email": null,
+    "id": 50,
+    "identifier": "5491136206603@s.whatsapp.net",
+    "name": "Ernesto",
+    "phone_number": "+5491136206603",
+    "thumbnail": "http://chat.vecinos.com.ar/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbUlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d8457876e84d9b5534db9745f5f8ebf52b15281f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6d67cc85ee1ef5607c0fd1f48989b596f125a667/230885123_340552764270611_3142251917473574000_n.jpg"
+  },
+  "source_id": null,
+  "event": "message_created"
+}

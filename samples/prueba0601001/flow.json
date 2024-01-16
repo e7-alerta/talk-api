@@ -1,0 +1,17 @@
+{
+        "version": "1.0",
+        "links": [
+            { "next": "outgoing" },
+            { "previous": "incoming" },
+            { "self": "loading" }
+        ],
+        "data": {
+            "status": "OK",
+            "user_name": "Ernesto",
+            "place_street": "Delia",
+            "place_street_number": "3883"
+        },
+        "metadata": {
+            "next_step": "ask_contacts"
+        }
+    }

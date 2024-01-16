@@ -21,7 +21,6 @@ class DashContactsClient(object):
         print(response.text)
         return response.json().get("data", {})
 
-
     def update(self, contact_id, payload: dict):
         url = "https://dash.vecinos.com.ar/items/contacts/" + contact_id
         headers = {

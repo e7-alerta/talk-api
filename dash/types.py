@@ -30,9 +30,12 @@ class DashParams(BaseModel):
 class DashPlaceInfo(BaseModel):
     id: str
     name: str
-    address: str
-    phone: Optional[str] = None
-    contact_name: str
+    address: Optional[str] = None
+    street: Optional[str] = None
+    street_number: Optional[str] = None
+    contact_name: Optional[str] = None
+    contact_phone: Optional[str] = None
+    contact_owner: Optional[str] = None
     pass
 
 

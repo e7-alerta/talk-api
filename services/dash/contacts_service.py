@@ -2,7 +2,7 @@ from dash import dash_contacts_client
 
 
 def create_contact(new_contact_form: dict):
-    print("[ contacts_service::create_contact ] ", new_contact_form)
+    print(f"[ contacts_service::create_contact ] {new_contact_form} =====================================================")
     contact = dash_contacts_client.create(new_contact_form)
     return contact
 
@@ -29,6 +29,20 @@ def update_botpress_conversation_id(contact_id, botpress_conversation_id):
     dash_contacts_client.update(contact_id=contact_id, payload={
         "botpress_conversation_id": f"{botpress_conversation_id}"
     })
+    pass
+
+
+def update_place(contact_id, place_id):
+    print("[ contacts_service::update_place ] ", contact_id, place_id)
+    dash_contacts_client.update(contact_id=contact_id, payload={
+        "place": f"{place_id}"
+    })
+    pass
+
+
+def update_contact(contact_id, data):
+    print("[ contacts_service::update_contact ] ", contact_id, data)
+    dash_contacts_client.update(contact_id=contact_id, payload=data)
     pass
 
 

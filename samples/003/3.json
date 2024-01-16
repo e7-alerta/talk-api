@@ -1,0 +1,45 @@
+{
+  "data": {
+    "access_token": "cy7mNSLUH6uyJ5wEAcrrDe5e",
+    "account_id": 2,
+    "available_name": "Gaby",
+    "avatar_url": "",
+    "confirmed": true,
+    "display_name": "Gaby",
+    "message_signature": null,
+    "email": "e7canasta@gmail.com",
+    "id": 2,
+    "inviter_id": null,
+    "name": "Gabriel Simionato",
+    "provider": "email",
+    "pubsub_token": "WFi6WEixfmzKZXDBzGmyF426",
+    "role": "administrator",
+    "ui_settings": {
+      "rtl_view": false,
+      "is_macro_open": true,
+      "is_conv_actions_open": true,
+      "is_conv_details_open": true,
+      "is_ct_prev_conv_open": true,
+      "is_previous_conv_open": true,
+      "show_secondary_sidebar": true,
+      "is_contact_sidebar_open": true,
+      "is_conv_participants_open": true,
+      "is_contact_attributes_open": true,
+      "previously_used_sidebar_view": true
+    },
+    "uid": "e7canasta@gmail.com",
+    "type": "SuperAdmin",
+    "accounts": [
+      {
+        "id": 2,
+        "name": "e7",
+        "status": "active",
+        "active_at": "2024-01-16T06:35:47.431Z",
+        "role": "administrator",
+        "availability": "online",
+        "availability_status": "offline",
+        "auto_offline": true
+      }
+    ]
+  }
+}

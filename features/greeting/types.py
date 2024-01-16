@@ -23,6 +23,7 @@ class MessageCreatedForm(BaseModel):
     message_intent: Optional[MessageIntent] = None
     phone_key: Optional[str] = None
     sender_name: Optional[str] = None
+    conversation_id: Optional[str] = None
 
     def __init__(self, content, phone_number, message_type):
         super().__init__(content=content, phone_number=phone_number, message_type=message_type)

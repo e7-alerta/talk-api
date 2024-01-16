@@ -1,6 +1,70 @@
-from features.greeting.types import MessageCreatedForm
+from datetime import datetime, timezone
 from services.dash import contacts_service as dash_contacts_service
 from services.dash import phones_service as dash_phones_service
+from services.dash import places_service as dash_places_service
+
+
+def _update_contact_associations(contact, phone_key):
+    print("------------------------------------", contact)
+    if not contact["phones"] or not contact["phones"][0].startswith(phone_key):
+
+        phone = _find_and_update_phone(contact, phone_key)
+
+        contact["phones"] = [phone.id]
+        if phone.place:
+            contact.place = phone.place
+            _update_place(contact["place"], contact)
+
+
+def _update_place(place_id, contact):
+    place_info = dash_places_service.get_place(place_id)
+
+    if not place_info.owner_contact:
+        dash_places_service.update_place(place_info.id, {
+            "contacto": f"{contact.name}",
+            "phone": f"{contact.phone}",
+            "owner_contact": f"{contact.id}"
+        })
+        pass
+
+
+def _is_new_contact(contact):
+    # Suponiendo que contact es el diccionario que proporcionaste
+    contact_created_date_str = contact["date_created"]
+
+    # Convierte la cadena de texto a un objeto datetime
+    contact_created_date = datetime.fromisoformat(contact_created_date_str.replace('Z', '+00:00'))
+
+    # Obtiene la zona horaria actual
+    current_timezone = datetime.now().astimezone().tzinfo
+
+    # Añade la información de la zona horaria a contact_created_date
+    contact_created_date = contact_created_date.replace(tzinfo=timezone.utc)
+
+    # Convierte contact_created_date a la misma zona horaria que la actual
+    contact_created_date = contact_created_date.astimezone(current_timezone)
+
+    # Calcula la diferencia en días
+    days_difference = (datetime.now(tz=current_timezone) - contact_created_date).days
+    return days_difference < 1
+
+
+def _find_and_update_phone(contact, phone_key):
+    print("phone_key", phone_key)
+    phone = dash_phones_service.find_first_without_contact_and_id_start_with(phone_key)
+    print("phone", phone)
+    phone.contact = contact
+    dash_phones_service.update_contact(phone.id, contact["id"])
+    return phone
+
+
+def _get_or_create_contact(phone_number, sender_name):
+    contact = dash_contacts_service.find_by_phone(phone_number)
+    if not contact:
+        contact = dash_contacts_service.create_contact({
+            "name": sender_name, "phone": phone_number
+        })
+    return contact
 
 
 class PlaceGreetingMessageHandler:
@@ -8,62 +72,22 @@ class PlaceGreetingMessageHandler:
     def __init__(self):
         pass
 
-    def handle(self, message_form: MessageCreatedForm):
-        (phone_number, sender_name, phone_key) = (
-            message_form.phone_number,
-            message_form.sender_name,
-            message_form.phone_key
-        )
+    def handle(self, phone_number, sender_name, phone_key):
+        """
+        Gestiona mensajes o solicitudes entrantes, asegurando el manejo adecuado de contactos,
+        teléfonos asociados y lugares en el contexto de un sistema de mensajería o comunicación.
+
+        Parámetros:
+        - numero_telefono (str): El número de teléfono asociado al mensaje entrante.
+        - nombre_remitente (str): El nombre del remitente o un valor predeterminado si no se proporciona.
+        - clave_telefono (str): Una clave utilizada para identificar y procesar el mensaje entrante.
+
+        Devoluciones:
+        - dash_contact (dict): Información sobre el contacto después de manejar el mensaje.
+        - recien_creado (bool): Una bandera que indica si el contacto se creó recientemente durante el proceso.
+        """
         print(f"[ place gretting message handler ] {phone_number} {sender_name} {phone_key}")
 
-        # check if contact with phone already exists
-        first_conversation = False
-        dash_contact = dash_contacts_service.find_by_phone(phone_number)
-        print("[ dash contact ] ", dash_contact)
-
-        if dash_contact is None:
-            print("[ dash contact not found ] ")
-            first_conversation = True
-            if sender_name is None:
-                sender_name = "Vecino"
-                pass
-            dash_contact = dash_contacts_service.create_contact({
-                "name": sender_name,
-                "phone": phone_number,
-                "made_in_chat": True
-            })
-            print("[ dash contact created ] ", dash_contact)
-            pass
-        else:
-            print("[ dash contact already exists ] ", dash_contact)
-            pass
-
-        # check if contact has a place associated
-        if dash_contact["phones"] is None or len(dash_contact["phones"]) == 0:
-            print("[ dash contact doesn't have a phones associated ] ")
-            dash_phone = dash_phones_service.find_first_without_contact_and_id_start_with(phone_key)
-            print("[ dash phones ] ", dash_phone)
-            if dash_phone is not None:
-                print("[ dash phone not found ] ")
-
-                if dash_phone.phone_number is None:
-                    print("[ dash phone doesn't have a phone number associated ] ", dash_phone)
-                    dash_phone.phone_number = phone_number
-                    print("[ dash phone number updated ] ", dash_phone)
-                    dash_phones_service.update_phone_number(dash_phone.id, phone_number)
-                    pass
-
-                dash_phone.contact = dash_contact
-                dash_phones_service.update_contact(dash_phone.id, dash_contact["id"])
-                print("[ dash phone contact assigned ] ", dash_phone, dash_contact)
-                dash_contact["phones"] = [dash_phone.id]
-        else:
-            print("[ dash contact has a phones associated ] ", dash_contact["phones"])
-            phone_id = dash_contact["phones"][0]
-            # check if phone id starts with phone_key
-            if not phone_id.startswith(phone_key):
-                print(f"[ dash phone doesn't start with phone_key #{phone_key} ] ", phone_id)
-                pass
-            pass
-
-        return (dash_contact, first_conversation)
+        dash_contact = _get_or_create_contact(phone_number, sender_name)
+        _update_contact_associations(dash_contact, phone_key)
+        return dash_contact, _is_new_contact(dash_contact)

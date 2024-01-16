@@ -1,0 +1,31 @@
+{
+  "botId": "61156f87-27ac-41f3-a7aa-c5d17b8629b6",
+  "conversationId": "2c9e00ca-48ef-4bdc-a758-10d1cf843035",
+  "direction": "outgoing",
+  "id": "3b140917-751e-4025-b4f1-731139b8ae4c",
+  "type": "text",
+  "payload": {
+    "type": "text",
+    "text": "🚀 Aguarda un momento mientras te conecto con un agente que te explicará fácilmente cómo funciona todo 👍",
+    "typing": true
+  },
+  "data": {
+    "user_name": "migue",
+    "user_profession": "",
+    "place_name": "",
+    "place_address": "potosí 292",
+    "place_type": "carnicería",
+    "contacts": [
+      {
+        "contact_name": "Walter",
+        "phone_number": "1424467",
+        "contact_type": ""
+      },
+      {
+        "contact_name": "estela",
+        "phone_number": "245678",
+        "contact_type": ""
+      }
+    ]
+  }
+}

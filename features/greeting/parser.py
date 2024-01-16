@@ -20,6 +20,7 @@ def parse_message_created_event(data):
         if _is_valid_event(data):
             content = data.get("content", "")
             phone_number = data.get("conversation", {}).get("meta", {}).get("sender", {}).get("phone_number", "")
+            conversation_id = data.get("conversation", {}).get("id", None)
             message_type = data.get("message_type", "")
 
             form = MessageCreatedForm(content, phone_number, message_type)
@@ -31,6 +32,7 @@ def parse_message_created_event(data):
             if sender_name == "" or any(char.isdigit() for char in sender_name):
                 sender_name = None
             form.sender_name = sender_name
+            form.conversation_id = conversation_id
 
             form.evaluate_message_intent()
             form.extract_phone_key()

@@ -28,6 +28,7 @@ def create_user(phone_number, name):
 
 
 def create_conversation(phone_number, user_id, conversation_id):
+    print(f" creating conversation for {(phone_number, user_id, conversation_id)}")
     create_conversation_url = "https://api.botpress.cloud/v1/chat/conversations"
     payload = {
         "channel": "channel",
@@ -38,15 +39,19 @@ def create_conversation(phone_number, user_id, conversation_id):
         }
     }
     response = requests.request("POST", create_conversation_url, json=payload, headers=HEADERS)
+    print("........................................  conversation created  ........................................")
     print(response.text)
     conversation = response.json()["conversation"]
     conversation_id = conversation["id"]
+    print("........................................    ........................................")
 
     add_participants_url = f"https://api.botpress.cloud/v1/chat/conversations/{conversation_id}/participants"
     payload = {"userId": user_id}
     response = requests.request("POST", add_participants_url, json=payload, headers=HEADERS)
+    print("........................................  participant added  ........................................")
     print(response.text)
     participant = response.json()["participant"]
+    print("................................................................................")
 
     return (conversation, participant)
 
@@ -62,7 +67,7 @@ def send_message(user_id, conversation_id, message, phone_number, external_conve
         },
         "tags": {
             # "id": random.,
-            "fromUserId": f"{phone_number}",
+            #"fromUserId": f"{phone_number}",
             "chatId": f"{external_conversation_id}"
         },
         "type": "text"

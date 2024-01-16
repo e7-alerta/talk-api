@@ -27,25 +27,29 @@ session.headers.update({
     'sec-fetch-mode': 'cors'
 })
 
-session.headers.update({
-    'access-token': ACCESS_TOKEN,
-    'client': CLIENT
-})
+# session.headers.update({
+#     'access-token': ACCESS_TOKEN,
+#     'client': CLIENT
+# })
 
 auth_client = AuthClient(session, chatwoot_params)
-# print(auth_client.session.cookies)
-# response = auth_client.login(USER_EMAIL, HASBRO)
-# if response:
-#     print(response["data"]["access_token"])
-#     session.headers.update({
-#         'access-token': response["data"]["access_token"],
-#         'client': CLIENT
-#     })
-# print(auth_client.session.cookies)
+"""
+print(auth_client.session.cookies)
+response = auth_client.login(USER_EMAIL, HASBRO)
+if response:
+    print(response["data"]["access_token"])
+    session.headers.update({
+        'access-token': response["data"]["access_token"],
+        'client': CLIENT
+    })
+print(auth_client.session.cookies)
+"""
 
 # print("loging successful")
 
 # conversations_client = ConversationsClient(session)
+
+
 contacts_client = ContactsClient(
     auth_client.session,
     chatwoot_params
@@ -61,7 +65,7 @@ if __name__ == '__main__':
     # create conversation
     conversation = conversations_client.create(
         ChatContact(
-            id=14,
+            id="14",
             name="Ernesto simionato",
             phone_number="+5491136206603"
         )

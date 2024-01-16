@@ -1,0 +1,30 @@
+{
+  "account": {
+    "id": 2,
+    "name": "e7"
+  },
+  "additional_attributes": {},
+  "avatar": "http://chat.vecinos.com.ar/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbUlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d8457876e84d9b5534db9745f5f8ebf52b15281f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6d67cc85ee1ef5607c0fd1f48989b596f125a667/230885123_340552764270611_3142251917473574000_n.jpg",
+  "custom_attributes": {},
+  "email": null,
+  "id": 50,
+  "identifier": "5491136206603@s.whatsapp.net",
+  "name": "Ernesto",
+  "phone_number": "+5491136206603",
+  "thumbnail": "http://chat.vecinos.com.ar/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbUlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d8457876e84d9b5534db9745f5f8ebf52b15281f/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2RwQWZvdyIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--6d67cc85ee1ef5607c0fd1f48989b596f125a667/230885123_340552764270611_3142251917473574000_n.jpg",
+  "event": "contact_updated",
+  "changed_attributes": [
+    {
+      "updated_at": {
+        "previous_value": "2024-01-16T05:04:08.007Z",
+        "current_value": "2024-01-16T05:04:08.608Z"
+      }
+    },
+    {
+      "last_activity_at": {
+        "previous_value": "2024-01-16T05:01:42.025Z",
+        "current_value": "2024-01-16T05:04:08.591Z"
+      }
+    }
+  ]
+}

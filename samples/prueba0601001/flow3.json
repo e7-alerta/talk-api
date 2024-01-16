@@ -1,0 +1,5 @@
+{
+  "currentStep": "paso-1",
+  "nextStep": "paso-2",
+  "data": { /* datos específicos del paso */ }
+}
